@@ -1,4 +1,6 @@
-# docker-node
+**docker-node**
+
+# Docker入门
 
 ## 创建环境
 ``` sh
@@ -55,3 +57,39 @@ https://hub.docker.com/repository/create
 ``` sh
 docker pull keer2345/docker-node
 ```
+
+# 指定执行的进程ENTRYPOINT
+## 普通的执行
+``` sh
+docker run node:15.3.0 ls /etc
+docker run node:15.3.0 cat /etc/hosts
+docker run node:15.3.0 cat /etc/os-release
+
+docker run node:15.3.0 node -v
+```
+## 实践
+创建文件 Dockerfile
+
+``` sh
+FROM node:15.3.0
+
+ENTRYPOINT ["node"]
+CMD ["-v"]
+```
+运行：
+
+``` sh
+docker image build -t mynode .
+docker run mynode
+```
+结果如下：
+
+``` sh
+v15.3.0
+```
+
+执行 JS 脚本：
+``` sh
+docker run mynode -e "console.log('hello')"
+```
+
