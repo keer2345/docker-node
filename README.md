@@ -35,3 +35,11 @@ I love this game.
 ```
 
 ## 推送到Github
+
+``` sh
+git add .
+git commit -m "docker-node-1"
+git tag v01
+git tag
+git push --tags
+```
