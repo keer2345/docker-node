@@ -43,3 +43,15 @@ git tag v01
 git tag
 git push --tags
 ```
+
+## 关联到docker仓库
+
+https://hub.docker.com/repository/create
+
+可以关联 Github 创建 Docker 仓库。
+
+关联完成后可以拉取到本地：
+
+``` sh
+docker pull keer2345/docker-node
+```
